@@ -21,8 +21,8 @@ You will need the following things properly installed on your computer.
 
 ### Running Tests
 
-* `ember test`
-* `ember test --server`
+* `ember test` - to run in CLI
+* `ember test --server` to run in browser (localhost:4200)
 
 ## Further Reading / Useful Links
 
