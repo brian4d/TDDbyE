@@ -9,4 +9,8 @@ class Dollar
     result = amount * multiplier
     return Dollar.new(:amount => result)
   end  
+  
+  def equals(object)
+    return self.amount == object.amount
+  end  
 end
