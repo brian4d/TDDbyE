@@ -8,8 +8,10 @@ moduleFor('model:dollar', 'Unit | dollar', {
 
 test('it multiplies', function(assert) {
 	const five = this.subject({amount: 5});
-	five.times(2);
-	assert.equal(five.amount, 10);
+	let product = five.times(2);
+	assert.equal(product.amount, 10);
+	product = five.times(3);
+	assert.equal(product.amount, 15);
 });
 
 test('it exists', function(assert) {

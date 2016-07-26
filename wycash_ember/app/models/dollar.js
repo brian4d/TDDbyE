@@ -2,25 +2,16 @@
 // // import attr from 'ember-data/attr';
 // // import { belongsTo, hasMany } from 'ember-data/relationships';
 //
-// var Dollar = Ember.Object.extend({
-// 	amount: 0;
-// 	times(multiplier) {
-// 		this.set(amount, amount * 2);
-// 	}
-//
-// });
-//
-// // export default Model.extend({
-// // 	amount: attr('number');
-// // });
-// export default Dollar;
-
 import Ember from 'ember';
 
-export default Ember.Object.extend({
+var Dollar = Ember.Object.extend({
 	amount: 0,
 	times(multiplier) {
 		let amount = this.get('amount');
-		this.set('amount', amount * multiplier);
+		// this.set('amount', amount * multiplier);
+		let result = amount * multiplier;
+		return Dollar.create({ amount: result });
 	}
 });
+
+export default Dollar;
