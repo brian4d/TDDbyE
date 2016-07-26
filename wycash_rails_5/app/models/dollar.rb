@@ -5,6 +5,8 @@ class Dollar
   attr_accessor :amount
 
   def times(multiplier)
-    self.amount *= multiplier
+    # self.amount *= multiplier
+    result = amount * multiplier
+    return Dollar.new(:amount => result)
   end  
 end
