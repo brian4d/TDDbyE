@@ -14,8 +14,19 @@ test('it multiplies', function(assert) {
 	assert.equal(product.amount, 15);
 });
 
+test('equality', function(assert) {
+	assert.expect(4);
+	const one = this.subject({amount: 5});
+	const two = this.subject({amount: 5});
+	const three = this.subject().constructor.create({ amount: 6});
+	assert.equal(one.amount, 5);
+	assert.equal(three.amount, 6);
+	
+	assert.ok(one.equals(two));
+	assert.notOk(one.equals(three));
+});
+
 test('it exists', function(assert) {
   let model = this.subject();
-  // let store = this.store();
   assert.ok(!!model);
 });

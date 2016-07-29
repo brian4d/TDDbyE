@@ -4,13 +4,16 @@
 //
 import Ember from 'ember';
 
-var Dollar = Ember.Object.extend({
+const Dollar = Ember.Object.extend({
 	amount: 0,
 	times(multiplier) {
-		let amount = this.get('amount');
-		// this.set('amount', amount * multiplier);
-		let result = amount * multiplier;
+		let my_amount = this.amount;
+		let result = my_amount * multiplier;
 		return Dollar.create({ amount: result });
+	},
+	equals(obj) {
+		let my_amount = this.amount;
+		return my_amount===obj.amount;
 	}
 });
 
