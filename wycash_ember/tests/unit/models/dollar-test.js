@@ -17,7 +17,7 @@ test('it multiplies', function(assert) {
 test('equality', function(assert) {
 	assert.expect(4);
 	const one = this.subject({amount: 5});
-	const two = this.subject({amount: 5});
+	const two = this.subject().constructor.create({amount: 5});
 	const three = this.subject().constructor.create({ amount: 6});
 	assert.equal(one.amount, 5);
 	assert.equal(three.amount, 6);
