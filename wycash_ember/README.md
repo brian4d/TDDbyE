@@ -24,6 +24,12 @@ You will need the following things properly installed on your computer.
 * `ember test` - to run in CLI
 * `ember test --server` to run in browser (localhost:4200)
 
+## Language Differences
+* The "equals" method overrides Java's default equality operator, which is used by JUnit's assertEquals() (Ch 3, 4)
+* Implement this in Ruby by overriding the "==" equality operator, which is used by MiniTest (Ch 3, 4)
+* Javascript does not allow overriding the default equality operator, use QUnit's deepEqual() assertion instead (Ch 4)
+* Neither Ruby nor Javascript have class private variables (Ch 4)
+
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
