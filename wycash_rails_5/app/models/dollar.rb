@@ -3,14 +3,24 @@ class Dollar
   # Super-clean Rails 5 syntax for a model without a DB table
   
   attr_accessor :amount
-
+  
+  def initialize(amount)
+    self.amount = amount
+  end    
+  
   def times(multiplier)
     # self.amount *= multiplier
-    result = amount * multiplier
-    return Dollar.new(:amount => result)
+    result = self.amount * multiplier
+    return Dollar.new(result)
   end  
   
   def equals(object)
-    return self.amount == object.amount
+    dollar = Dollar.new(object.amount)
+    return (self.amount == dollar.amount)
   end  
+  
+  def ==(o)
+    dollar = Dollar.new(o.amount)
+    return (self.amount == dollar.amount)
+  end
 end
