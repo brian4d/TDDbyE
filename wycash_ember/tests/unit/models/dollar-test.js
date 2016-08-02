@@ -8,10 +8,13 @@ moduleFor('model:dollar', 'Unit | dollar', {
 
 test('it multiplies', function(assert) {
 	const five = this.subject({amount: 5});
-	let product = five.times(2);
-	assert.equal(product.amount, 10);
-	product = five.times(3);
-	assert.equal(product.amount, 15);
+	
+	// This doesn't work, can't override JS equality operator
+	// assert.equal(five.times(2), this.subject().constructor.create({amount: 10}));
+	
+	// Instead use QUnit's deepEqual()
+	assert.deepEqual(five.times(2), this.subject().constructor.create({ amount: 10 }));
+	assert.deepEqual(five.times(3), this.subject().constructor.create({ amount: 15 }));
 });
 
 test('equality', function(assert) {
