@@ -5,12 +5,12 @@
 //import Ember from 'ember';
 import Money from './money';
 
-let Dollar = Money.extend({
+let Franc = Money.extend({
 	times(multiplier) {
 		let my_amount = this.amount;
 		let result = my_amount * multiplier;
-		return Dollar.create({ amount: result });
+		return Franc.create({ amount: result });
 	},
 });
 
-export default Dollar;
+export default Franc;
